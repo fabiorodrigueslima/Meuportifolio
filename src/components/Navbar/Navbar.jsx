@@ -6,7 +6,7 @@ function Navbar() {
 
             <div className="navbar-container">
 
-                <a className="navbar-logo" href="/Home" aria-label="Ir para o início">
+                <a className="navbar-logo" href="/" aria-label="Ir para o início">
                     <img
                         src={logo}
                         alt="Logo Fábio Rodrigues"
