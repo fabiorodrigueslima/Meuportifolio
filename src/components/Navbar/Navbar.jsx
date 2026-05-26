@@ -1,4 +1,4 @@
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/Logo-Portifolio.png";
 
 function Navbar() {
     return (
@@ -6,7 +6,7 @@ function Navbar() {
 
             <div className="navbar-container">
 
-                <a className="navbar-logo" href="#home" aria-label="Ir para o início">
+                <a className="navbar-logo" href="/Home" aria-label="Ir para o início">
                     <img
                         src={logo}
                         alt="Logo Fábio Rodrigues"
