@@ -34,7 +34,7 @@ const projects = [
         description: "Loja virtual em desenvolvimento com catálogo, carrinho, checkout e área do cliente.",
         result: "Estrutura preparada para vender online com jornada simples de compra.",
         techs: ["Catálogo", "Checkout", "Cliente"],
-        href: "#",
+        href: "https://rusticerrado.vercel.app/",
         tone: "gold"
     }
 ];
