@@ -1,26 +1,26 @@
 import { useEffect } from "react";
 
 function useReveal() {
-    useEffect(() => {
-        const reveals = document.querySelectorAll(".reveal");
+  useEffect(() => {
+    const reveals = document.querySelectorAll(".reveal:not(.active)");
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                }
-            });
-        }, {
-            threshold: 0.2,
-        });
+    if (!("IntersectionObserver" in window)) {
+      reveals.forEach((element) => element.classList.add("active"));
+      return undefined;
+    }
 
-        reveals.forEach((el) => observer.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
 
-        return () => {
-            reveals.forEach((el) => observer.unobserve(el));
-            observer.disconnect();
-        };
-    }, []);
+    reveals.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
 }
 
 export default useReveal;

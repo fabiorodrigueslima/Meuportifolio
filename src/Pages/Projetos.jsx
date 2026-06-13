@@ -1,97 +1,20 @@
+import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 import useReveal from "../hooks/useReveal";
 
 const projects = [
-    {
-        category: "Rede social",
-        name: "Postfan",
-        description: "Plataforma social com feed, curtidas, comentários, perfil de usuário e salas virtuais.",
-        result: "Projeto com foco em comunidade, interação e experiência logada.",
-        techs: ["React", "Node", "UX"],
-        href: "#",
-        tone: "blue"
-    },
-    {
-        category: "Site institucional",
-        name: "Ecolimpo",
-        description: "Site para cooperativa com serviços, coleta seletiva e conteúdo de educação ambiental.",
-        result: "Presença digital mais clara para apresentar serviços e gerar contato.",
-        techs: ["SEO", "Responsivo", "Institucional"],
-        href: "https://site-ecolimpo.vercel.app/",
-        tone: "green"
-    },
-    {
-        category: "Vitrine comercial",
-        name: "Enlace das Arteiras",
-        description: "Site para divulgar produtos artesanais, serviços criativos e canais de atendimento.",
-        result: "Organização visual para mostrar produtos e facilitar conversas com clientes.",
-        techs: ["Vitrine", "WhatsApp", "Mobile"],
-        href: "https://enlacedasarteiras.com.br",
-        tone: "rose"
-    },
-    {
-        category: "E-commerce",
-        name: "RustiCerrado",
-        description: "Loja virtual em desenvolvimento com catálogo, carrinho, checkout e área do cliente.",
-        result: "Estrutura preparada para vender online com jornada simples de compra.",
-        techs: ["Catálogo", "Checkout", "Cliente"],
-        href: "https://rusticerrado.vercel.app/",
-        tone: "gold"
-    }
+    { name: "Cooperativa Ecolimpo", category: "Site institucional", image: "/project-ecolimpo.svg", description: "Site institucional voltado para educação ambiental, coleta seletiva e apresentação dos serviços da cooperativa.", techs: ["React", "CSS3", "Vite"], live: "https://site-ecolimpo.vercel.app/" },
+    { name: "Enlace das Arteiras", category: "Plataforma criativa", image: "/project-enlace.svg", description: "Plataforma criada para valorizar o trabalho das artesãs, divulgar produtos e facilitar o contato com clientes.", techs: ["React", "Responsivo", "UX/UI"], live: "https://enlacedasarteiras.com.br" },
+    { name: "Portfólio Pessoal", category: "Marca pessoal", image: "/project-portfolio.svg", description: "Projeto desenvolvido para apresentar meus serviços, habilidades e projetos de forma profissional e estratégica.", techs: ["React", "Vite", "JavaScript"], live: "#inicio", repo: "https://github.com/fabiorodrigueslima/Meuportifolio" },
 ];
 
 function Projects() {
     useReveal();
-
     return (
-        <section className="projects" id="projetos">
-
-            <div className="projects-title reveal">
-                <span>PROJETOS</span>
-
-                <h2>Trabalhos que mostram o que eu entrego</h2>
-
-                <p>
-                    Cada projeto abaixo representa um tipo de solução que posso
-                    adaptar para empresas, marcas pessoais, lojas e serviços locais.
-                </p>
-            </div>
-
+        <section className="projects section" id="projetos">
+            <div className="section-heading reveal"><span>PROJETOS</span><h2>Projetos que unem design e propósito</h2><p>Conheça algumas soluções desenvolvidas para criar presença digital, comunicar valor e aproximar marcas de seus públicos.</p></div>
             <div className="projects-grid">
-                {projects.map((project) => (
-                    <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className={`project-card reveal project-${project.tone}`}
-                        key={project.name}
-                    >
-                        <div className="project-preview" aria-hidden="true">
-                            <div className="preview-bar"></div>
-                            <div className="preview-hero"></div>
-                            <div className="preview-lines">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-
-                        <div className="project-content">
-                            <span>{project.category}</span>
-                            <h3>{project.name}</h3>
-                            <p>{project.description}</p>
-
-                            <strong>{project.result}</strong>
-
-                            <div className="project-tags">
-                                {project.techs.map((tech) => (
-                                    <small key={tech}>{tech}</small>
-                                ))}
-                            </div>
-                        </div>
-                    </a>
-                ))}
+                {projects.map((project) => <article className="project-card reveal" key={project.name}><a className="project-image" href={project.live} target={project.live.startsWith("http") ? "_blank" : undefined} rel="noreferrer" aria-label={`Visualizar ${project.name}`}><img src={project.image} alt={`Prévia do projeto ${project.name}`} loading="lazy" /></a><div className="project-body"><span className="project-category">{project.category}</span><h3>{project.name}</h3><p>{project.description}</p><div className="project-tags">{project.techs.map((tech) => <span key={tech}>{tech}</span>)}</div><div className="project-actions"><a href={project.live} target={project.live.startsWith("http") ? "_blank" : undefined} rel="noreferrer">Ver projeto <FaArrowUpRightFromSquare aria-hidden="true" /></a>{project.repo && <a href={project.repo} target="_blank" rel="noreferrer" className="repo-link"><FaGithub aria-hidden="true" /> Repositório</a>}</div></div></article>)}
             </div>
-
         </section>
     );
 }
