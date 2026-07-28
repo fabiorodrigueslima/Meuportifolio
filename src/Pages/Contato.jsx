@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaWhatsapp, FaEnvelope, FaLinkedinIn, FaGithub, FaArrowRight } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope, FaLinkedinIn, FaGithub, FaArrowRight, FaFileAlt } from "react-icons/fa";
 import useReveal from "../hooks/useReveal";
 import { SOCIAL_LINKS, WHATSAPP_URL } from "../data/portfolio";
 
@@ -18,10 +18,13 @@ function Contato() {
 
   return (
     <section className="contact section" id="contato">
-      <div className="contact-intro reveal"><span>VAMOS CONVERSAR?</span><h2>Seu próximo projeto pode começar agora.</h2><p>Conte um pouco sobre a sua ideia. Vou entender sua necessidade e indicar o melhor caminho para transformar o projeto em uma solução digital eficiente.</p><a className="btn btn-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noreferrer"><FaWhatsapp /> Solicitar orçamento pelo WhatsApp</a></div>
+      <div className="contact-intro reveal"><span>VAMOS CONVERSAR?</span><h2>Tem um projeto ou uma oportunidade?</h2><p>Conte o que você precisa resolver. Posso conversar sobre sites, sistemas, APIs, automações, trabalho como desenvolvedor ou uma possível parceria.</p><a className="btn btn-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><FaWhatsapp aria-hidden="true" /> Falar com Fábio no WhatsApp</a></div>
       <div className="contact-content">
-        <div className="contact-links reveal">{contacts.map(({ icon: Icon, title, text, href }) => <a className="contact-card" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" key={title}><div className="contact-icon"><Icon /></div><div><strong>{title}</strong><span>{text}</span></div><FaArrowRight className="contact-arrow" /></a>)}</div>
-        <form className="contact-form reveal" onSubmit={submit}><h3>Fale sobre o seu projeto</h3><label htmlFor="nome">Nome</label><input id="nome" name="nome" value={form.nome} onChange={update} autoComplete="name" placeholder="Como posso te chamar?" required /><label htmlFor="email">E-mail</label><input id="email" type="email" name="email" value={form.email} onChange={update} autoComplete="email" placeholder="voce@exemplo.com" required /><label htmlFor="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" value={form.mensagem} onChange={update} placeholder="Conte brevemente sobre o projeto..." required></textarea><button type="submit">Enviar mensagem <FaArrowRight /></button></form>
+        <div className="contact-links reveal">
+          {contacts.map(({ icon: Icon, title, text, href }) => <a className="contact-card" href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} key={title}><div className="contact-icon"><Icon aria-hidden="true" /></div><div><strong>{title}</strong><span>{text}</span></div><FaArrowRight className="contact-arrow" aria-hidden="true" /></a>)}
+          <a className="contact-card" href="#curriculo"><div className="contact-icon"><FaFileAlt aria-hidden="true" /></div><div><strong>Currículo</strong><span>Acessar opções do currículo</span></div><FaArrowRight className="contact-arrow" aria-hidden="true" /></a>
+        </div>
+        <form className="contact-form reveal" onSubmit={submit}><h3>Inicie uma conversa</h3><p className="form-help">Ao enviar, sua mensagem será preparada e aberta no WhatsApp.</p><label htmlFor="nome">Nome</label><input id="nome" name="nome" value={form.nome} onChange={update} autoComplete="name" placeholder="Como posso te chamar?" required /><label htmlFor="email">E-mail</label><input id="email" type="email" name="email" value={form.email} onChange={update} autoComplete="email" placeholder="voce@exemplo.com" required /><label htmlFor="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" value={form.mensagem} onChange={update} placeholder="Conte brevemente sobre o projeto ou oportunidade..." required></textarea><button type="submit">Continuar no WhatsApp <FaWhatsapp aria-hidden="true" /></button></form>
       </div>
     </section>
   );

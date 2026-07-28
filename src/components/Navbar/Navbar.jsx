@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import logo from "../../assets/images/Logo-Portifolio.png";
+import logo from "../../assets/images/logo-optimized.png";
 import { WHATSAPP_URL } from "../../data/portfolio";
 
 const links = [
   ["Início", "#inicio"], ["Serviços", "#servicos"], ["Projetos", "#projetos"],
-  ["Processo", "#processo"], ["Sobre", "#sobre"], ["Contato", "#contato"],
+  ["Tecnologias", "#tecnologias"], ["Sobre", "#sobre"], ["Currículo", "#curriculo"],
+  ["Contato", "#contato"],
 ];
 
 function Navbar() {
@@ -20,7 +21,7 @@ function Navbar() {
     <header className="navbar">
       <div className="navbar-container">
         <a className="navbar-logo" href="#inicio" aria-label="Ir para o início" onClick={() => setIsOpen(false)}>
-          <img src={logo} alt="FábioDev" className="logo-img" />
+          <img src={logo} alt="FábioDev" className="logo-img" width="500" height="250" />
         </a>
 
         <button className={`menu-toggle ${isOpen ? "is-open" : ""}`} type="button" aria-label={isOpen ? "Fechar menu" : "Abrir menu"} aria-expanded={isOpen} aria-controls="main-menu" onClick={() => setIsOpen((open) => !open)}>
@@ -31,10 +32,10 @@ function Navbar() {
           <ul className="navbar-menu">
             {links.map(([label, href]) => <li key={href}><a href={href} onClick={() => setIsOpen(false)}>{label}</a></li>)}
           </ul>
-          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="navbar-button navbar-button-mobile">Pedir Orçamento</a>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="navbar-button navbar-button-mobile">Pedir orçamento</a>
         </nav>
 
-        <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="navbar-button navbar-button-desktop">Pedir Orçamento</a>
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="navbar-button navbar-button-desktop">Pedir orçamento</a>
       </div>
     </header>
   );

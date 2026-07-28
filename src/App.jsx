@@ -6,20 +6,23 @@ import Process from "./Pages/Process";
 import Projects from "./Pages/Projetos";
 import Technologies from "./Pages/Technologies";
 import About from "./Pages/About/About";
-import Testimonials from "./Pages/Testimonials";
+import ProfessionalDevelopment from "./Pages/ProfessionalDevelopment";
+import Curriculo from "./Pages/Curriculo";
 import Contato from "./Pages/Contato";
 
 function App() {
   return (
     <>
+      <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <Navbar />
       <Home />
       <Services />
-      <Process />
       <Projects />
+      <Process />
       <Technologies />
       <About />
-      <Testimonials />
+      <ProfessionalDevelopment />
+      <Curriculo />
       <Contato />
       <Footer />
     </>

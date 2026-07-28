@@ -1,16 +1,39 @@
-# React + Vite
+# Portfólio Fábio Rodrigues
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio profissional de Fábio Rodrigues, Desenvolvedor Full Stack e Python. O projeto apresenta serviços, tecnologias, formação em andamento e soluções desenvolvidas.
 
-Currently, two official plugins are available:
+## Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React e Vite
+- JavaScript, HTML e CSS
+- React Icons
 
-## React Compiler
+## Executar localmente
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Verificações
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run lint
+npm run build
+```
+
+## Conteúdo para atualizar
+
+Textos, links de contato e a URL do currículo ficam centralizados, quando aplicável, em `src/data/portfolio.js`. Antes de publicar novos projetos, confirme problema resolvido, participação, tecnologias, status, demonstração e repositório.
+
+Para publicar o currículo:
+
+1. substitua o arquivo em `public/curriculo-fabio-rodrigues.pdf`;
+2. mantenha `RESUME_AVAILABLE` como `true` em `src/data/portfolio.js`;
+3. execute o lint e o build antes da publicação.
+
+## Pendências editoriais
+
+- Confirmar depoimentos reais e autorização para publicação antes de reativar uma seção de prova social.
+- Complementar os projetos com funcionalidades, repositórios públicos e resultados verificáveis.
+- Substituir a imagem social atual por uma arte definitiva de 1200 × 630 px.

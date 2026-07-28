@@ -5,3 +5,8 @@ export const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com/in/fabioprogramacao",
   github: "https://github.com/fabiorodrigueslima",
 };
+
+// Para trocar o currículo, substitua o PDF em public mantendo este nome.
+export const RESUME_URL = "/curriculo-fabio-rodrigues.pdf";
+export const RESUME_DOWNLOAD_NAME = "Curriculo-Fabio-Rodrigues.pdf";
+export const RESUME_AVAILABLE = true;
