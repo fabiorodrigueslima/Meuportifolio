@@ -5,8 +5,8 @@ import { SOCIAL_LINKS, WHATSAPP_URL } from "../data/portfolio";
 
 const contacts = [
   { icon: FaWhatsapp, title: "WhatsApp", text: "Converse comigo agora", href: WHATSAPP_URL },
-  { icon: FaEnvelope, title: "E-mail", text: "fabiorodrigues.programasao@gmail.com", href: SOCIAL_LINKS.email },
-  { icon: FaLinkedinIn, title: "LinkedIn", text: "linkedin.com/in/fabioprogramacao", href: SOCIAL_LINKS.linkedin },
+  { icon: FaEnvelope, title: "E-mail", text: "contato.fabiorodriguesdev@gmail.com", href: SOCIAL_LINKS.email },
+  { icon: FaLinkedinIn, title: "LinkedIn", text: "linkedin.com/in/fábio-rodrigues", href: SOCIAL_LINKS.linkedin },
   { icon: FaGithub, title: "GitHub", text: "github.com/fabiorodrigueslima", href: SOCIAL_LINKS.github },
 ];
 
