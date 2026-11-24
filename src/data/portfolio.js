@@ -7,6 +7,6 @@ export const SOCIAL_LINKS = {
 };
 
 // Para trocar o currículo, substitua o PDF em public mantendo este nome.
-export const RESUME_URL = "/curriculo-fabio-rodrigues.pdf";
+export const RESUME_URL = "/curriculo-fabio-rodrigues-2026-11.pdf";
 export const RESUME_DOWNLOAD_NAME = "Curriculo-Fabio-Rodrigues.pdf";
 export const RESUME_AVAILABLE = true;
